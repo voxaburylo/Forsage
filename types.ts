@@ -1,24 +1,15 @@
-export interface Product {
+
+import React from 'react';
+
+export type ViewState = 'home' | 'prices' | 'gallery' | 'admin';
+
+export interface ServiceItem {
   id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  images: string[]; // Supports multiple images
-  isNew?: boolean; // New feature for "Novinki"
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
-export interface CartItem extends Product {
-  quantity: number;
+export interface NavItem {
+  label: string;
+  view: ViewState;
 }
-
-export type Category = 'all' | 'acsessiory' | 'akb' | 'oils' | 'filters' | 'tools';
-
-export const CATEGORY_LABELS: Record<Category | string, string> = {
-  all: 'Всі товари',
-  acsessiory: 'Аксесуари',
-  akb: 'Акумулятори',
-  oils: 'Мастила та хімія',
-  filters: 'Фільтри',
-  tools: 'Інструменти'
-};
