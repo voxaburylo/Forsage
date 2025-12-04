@@ -1,15 +1,16 @@
+
 import React, { useState } from 'react';
-import Header from './components/Header.tsx';
-import Hero from './components/Hero.tsx';
-import Services from './components/Services.tsx';
-import Contact from './components/Contact.tsx';
-import Footer from './components/Footer.tsx';
-import Gallery from './components/Gallery.tsx';
-import Prices from './components/Prices.tsx';
-import AdminPanel from './components/AdminPanel.tsx';
-import { ViewState } from './types.ts';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Gallery from './components/Gallery';
+import Prices from './components/Prices';
+import AdminPanel from './components/AdminPanel';
+import { ViewState } from './types';
 import { Lock, X, Loader2 } from 'lucide-react';
-import { supabase } from './supabaseClient.ts';
+import { supabase } from './supabaseClient';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
